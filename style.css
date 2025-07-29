@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 1rem;
+}
+
+h1 {
+  color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 2px;
+  max-width: 90vw;
+  margin: 1rem auto;
+  aspect-ratio: 1 / 1;
+  touch-action: manipulation;
+}
+
+.cell {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.cell.wall {
+  background-color: #555;
+}
+
+.cell.visited {
+  background-color: #66bcde;
+}
+
+.cell.path {
+  background-color: #d900ff;
+}
+
+.cell.start {
+  background-color: #4caf50;
+}
+
+.cell.end {
+  background-color: #e91e63;
+}
+
+.controls button {
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #1976d2;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
